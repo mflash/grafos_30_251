@@ -1,0 +1,88 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+public class BFS
+{
+    private Graph g;
+    private Set<String> marked;
+    private Map<String, String> edgeTo;
+    private Map<String, Integer> distTo;
+    private String inicial;
+
+    public BFS(Graph g, String inicial)
+    {
+        this.inicial = inicial;
+        this.g = g;
+        marked = new HashSet<>();
+        edgeTo = new HashMap<>();
+        distTo = new HashMap<>();
+        for(String v: g.getVerts()) {
+            edgeTo.put(v, null);
+        }
+        bfs(g, inicial);
+    }
+
+    private void dfs(Graph g, String inicial)
+    {
+        System.out.println("entrando: "+inicial);
+        marked.add(inicial); // marca como visitado
+        for(String w: g.getAdj(inicial)) {
+            if(!marked.contains(w)) {
+                // implementar bfs
+            }     
+        }
+        System.out.println("saindo: "+inicial);
+    }
+
+    public boolean hasPathTo(String v) {
+        return marked.contains(v);
+    }
+
+    public List<String> pathTo(String v)
+    {
+        if(!marked.contains(v))
+            return new ArrayList<>();
+        List<String> path = new ArrayList<>();
+        String atual = edgeTo.get(v);
+        while(atual != null) {
+            path.add(0, atual);
+            atual = edgeTo.get(atual);            
+        }
+        return path;
+    }
+
+    public String toString()
+    {
+        StringBuilder sb = new StringBuilder();
+        for(String v: g.vertices) {            
+            sb.append(v+": ");
+            if(!marked.contains(v)) {
+                sb.append(" sem caminho");
+            }
+            else
+            {                
+                sb.append(pathTo(v));
+                
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        Graph g = new Graph("exemplos/tinyG.txt");
+        BFS bfs = new BFS(g, "0");        
+        System.out.println(bfs);
+
+        if(bfs.hasPathTo("7")) {
+            System.out.println("Tem caminho para 7");
+        }
+        else {
+            System.out.println("Não consigo chegar no 7!");
+        }
+    }
+}
