@@ -1,8 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public class CicloNaoDirigido {
@@ -75,7 +71,7 @@ public class CicloNaoDirigido {
         g.addEdge("7", "5");
         g = new Graph("exemplos/mediumG.txt");
 
-        CicloNaoDirigido ciclo = new CicloNaoDirigido(g);
+        CicloDirigido ciclo = new CicloDirigido(g);
         if (ciclo.hasCycle())
             System.out.println("Tem ciclo!");
         else
