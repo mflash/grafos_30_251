@@ -1,0 +1,29 @@
+digraph {
+rankdir = LR;
+node [shape = circle];
+"Alg e Estr Dados I" -> "Alg e Estr Dados II"
+"Alg e Estr Dados I" -> "Prog Soft Básico"
+"Alg e Estr Dados I" -> "Mod e Proj BD"
+"Alg e Estr Dados II" -> "Alg Avançados"
+"Engenh Requisitos" -> "Fundamentos IHC"
+"Engenh Requisitos" -> "Verif Valid Soft I"
+"Engenh Requisitos" -> "Proj Arq Soft"
+"Fundamentos IHC" -> "Design Interação"
+"Fundamentos de Prog" -> "Alg e Estr Dados I"
+"Fundamentos de Prog" -> "Prog OO"
+"Introd ES" -> "Prática AGES I"
+"Introd ES" -> "Engenh Requisitos"
+"Lab BD" -> "Mod e Proj BD"
+"Lab Redes" -> "Prog Distribuída"
+"Mod e Proj BD" -> "SGBD"
+"Mod e Proj BD" -> "Prática AGES II"
+"Org Arq Comp" -> "Sistemas Operacionais"
+"Prog OO" -> "Prática AGES II"
+"Prog OO" -> "Proj Arq Soft"
+"Prog Soft Básico" -> "Sistemas Operacionais"
+"Redes Comp" -> "Lab Redes"
+"Redes Comp" -> "Segurança Sistemas"
+"Sistemas Operacionais" -> "Redes Comp"
+"Sistemas Operacionais" -> "Prog Paralela"
+}
+
