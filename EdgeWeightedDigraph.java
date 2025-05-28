@@ -20,7 +20,6 @@ public class EdgeWeightedDigraph extends EdgeWeightedGraph {
       vertices.add(w);
       totalVertices++;
     }
-    totalEdges += 2;
     totalEdges++;
   }
 
